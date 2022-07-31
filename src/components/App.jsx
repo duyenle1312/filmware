@@ -1,10 +1,10 @@
-import React from 'react'
-import { CssBaseline } from '@mui/material'
-import { Route, Switch } from 'react-router-dom'
-import { Actors, Profile, NavBar, Movies, MovieInfo } from './'
-import useStyles from './style'
+import React from 'react';
+import { CssBaseline } from '@mui/material';
+import { Route, Switch } from 'react-router-dom';
+import { Actors, Profile, NavBar, Movies, MovieInfo } from '.';
+import useStyles from './style';
 
-const App = () => {
+function App() {
   // Use style (css classes) as a hook
   const classes = useStyles();
 
@@ -12,7 +12,8 @@ const App = () => {
     <div className={classes.root}>
       <CssBaseline />
       <NavBar />
-      <main>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
         <Switch>
           <Route exact path="/movie/:id">
             <MovieInfo />
@@ -29,7 +30,7 @@ const App = () => {
         </Switch>
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
